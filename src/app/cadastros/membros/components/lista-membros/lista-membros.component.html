@@ -1,0 +1,27 @@
+<h1>Lista de Membros</h1>
+<table class="table">
+    <tr>
+        <th>Id Membro</th> 
+        <th>Nome</th> 
+        <th>CPF</th> 
+        <th>Data de Nascimento</th> 
+        <th>Endereço</th> 
+        <th>Cargo</th> 
+        <th>Detalha Membro</th> 
+    </tr>
+    <tr *ngFor="let membro of membros">
+        <td>{{ membro.idMembro }}</td>
+        <td>{{ membro.nome }}</td>
+        <td>{{ membro.cpf | cpf }}</td>
+        <td>{{ membro.dataNascimento | date : 'dd/MM/yyyy '}}</td>
+        <td>{{ membro.endereco }}</td>
+        <td>{{ membro.cargo.nome }}</td>
+        <td><a [routerLink]="['/detalha-membro/' + membro.idMembro]"> Detalha</a></td>
+    </tr>
+</table>
+
+<div>
+    <button class="btn btn-primary" routerLink="{{ '/cadastra-membro' }}">
+        Novo Membro
+    </button>
+</div>
