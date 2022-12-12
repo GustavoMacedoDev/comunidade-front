@@ -1,0 +1,31 @@
+<div class="titulo">
+    <h2>Lista de Ministérios</h2>
+</div>
+
+<table class="table">
+    <tr>
+        <th>Id </th>
+        <th>Nome</th>
+        <th>Sigla </th>
+        <th>Data de Criação </th>
+        <th>Ver Membros </th>
+        <th>Editar Ministerio </th>
+    </tr>
+    <tr *ngFor="let min of ministerios">
+        <td>{{ min.idMinisterio }}</td>
+        <td>{{ min.nome }}</td>
+        <td>{{ min.sigla }}</td>
+        <td>{{ min.dataCriacao }}</td>
+        <td><a [routerLink]="['/lista-membros-ministerio/' + min.idMinisterio]">VER</a></td>
+        <td><a [routerLink]="['/edita-ministerio/' + min.idMinisterio]">Editar</a></td>
+    </tr>
+</table>
+
+<div>
+    <button class="btn btn-primary" routerLink="{{ '/cadastra-ministerio' }}">
+        Cadastrar Novo Ministério
+    </button>
+    <button class="btn btn-primary" routerLink="{{ '/inicio' }}">
+        Voltar
+    </button>
+</div>

@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { MembroService } from 'src/app/services/membro/membro.service';
-import { IListaCargo } from 'src/app/shared/interfaces/cargos/lista-cargo.dto';
 import { IListaMembrosDto } from 'src/app/shared/interfaces/membros/lista-membros.dto';
 
 @Component({

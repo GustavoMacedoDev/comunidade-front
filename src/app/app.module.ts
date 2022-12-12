@@ -15,6 +15,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { InicioModule } from './home/inicio/inicio.module';
 import { HomeRoutingModule } from './home/home-routing.module';
 import { NgxMaskModule } from 'ngx-mask';
+import { MinisteriosModule } from './cadastros/ministerios/ministerios.module';
 
 registerLocaleData(localePtBr);
 
@@ -33,8 +34,9 @@ registerLocaleData(localePtBr);
     SharedModule,
     InicioModule,
     HomeRoutingModule,
-    NgxMaskModule.forRoot(),
+    MinisteriosModule,
 
+    NgxMaskModule.forRoot(),
     AppRoutingModule
   ],
   providers: [{ provide : LOCALE_ID, useValue : 'pt-BR'}],

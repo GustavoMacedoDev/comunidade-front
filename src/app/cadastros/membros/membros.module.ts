@@ -9,13 +9,15 @@ import { MatSnackBarModule } from '@angular/material/snack-bar';
 import { NgxMaskModule } from 'ngx-mask';
 import { DetalhaMembroComponent } from './components/detalha-membro/detalha-membro.component';
 import { CadastraMembroMinisterioComponent } from './components/cadastra-membro-ministerio/cadastra-membro-ministerio.component';
+import { ListaMembrosMinisteriosComponent } from './components/lista-membros-ministerios/lista-membros-ministerios.component';
 
 @NgModule({
   declarations: [
     ListaMembrosComponent,
     CadastraMembroComponent,
     DetalhaMembroComponent,
-    CadastraMembroMinisterioComponent
+    CadastraMembroMinisterioComponent,
+    ListaMembrosMinisteriosComponent
   ],
   imports: [
     CommonModule,

@@ -1,0 +1,21 @@
+<div *ngIf="ministerio">
+    <h2>Membros do {{ ministerio.nome }}</h2>    
+</div>
+<div *ngIf="membros.length > 0">
+    <table class="table table.stripped">
+        <tr>
+            <th>Nome</th>
+            <th>Data de Entrada</th>
+            <th>Cargo</th>
+        </tr>
+        <tr *ngFor="let membro of membros">
+            <td>{{ membro.membro.nome }}</td>
+            <td>{{ membro.dataEntrada | date : 'dd/MM/yyyy '}}</td>
+            <td>{{ membro.membro.cargo.nome }}</td>
+        </tr>
+    </table>
+</div>
+
+<div *ngIf="membros.length < 1">
+    <span>Nenhum membro vinculado a esse ministério</span>
+</div>

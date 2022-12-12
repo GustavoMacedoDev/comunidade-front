@@ -29,6 +29,17 @@
       </option>
     </select>
   </div>
+  <div class="form-group campo">
+    <label for="responsavel">Responsável pelo Ministério</label>
+    <select class="form-control" name="responsavel" id="responsavel" formControlName="responsavel">
+      <option [value]="1">
+          SIM
+      </option>
+      <option [value]="2">
+        NÃO
+    </option>
+    </select>
+  </div>
 
   <div class="campo">
     <input type="submit" class="btn btn-primary mt-4" value="Salvar" (click)="cadastraMembroMinisterio()">

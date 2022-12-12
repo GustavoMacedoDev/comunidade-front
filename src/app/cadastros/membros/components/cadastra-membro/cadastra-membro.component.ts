@@ -3,9 +3,9 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { CargoService } from 'src/app/services/cargo/cargo.service';
 import { MembroService } from 'src/app/services/membro/membro.service';
-import { IListaCargo } from 'src/app/shared/interfaces/cargos/lista-cargo.dto';
 import { ICadastraMembroDto } from 'src/app/shared/interfaces/membros/cadastra-membro.dto';
 import { MatSnackBar } from '@angular/material/snack-bar';
+import { IListaCargoDto } from 'src/app/shared/interfaces/cargos/lista-cargos.dto';
 
 @Component({
   selector: 'app-cadastra-membro',
@@ -16,7 +16,7 @@ export class CadastraMembroComponent implements OnInit {
 
   novoMembro!: ICadastraMembroDto;
   form!: FormGroup;
-  cargos: IListaCargo[] = [];
+  cargos: IListaCargoDto[] = [];
   cpf!: string;
 
   constructor(
@@ -55,7 +55,7 @@ export class CadastraMembroComponent implements OnInit {
       .subscribe({
         next: res =>{
           const msg: string = "Membro cadastrado com sucesso!";
-          this.router.navigate(['/lista-membro']);
+          this.router.navigate(['/lista-membros']);
           this.snackBar.open(msg, "Sucesso", {duration: 3000});
         },
         error: (erro) =>{

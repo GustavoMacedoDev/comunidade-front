@@ -1,6 +1,10 @@
-*{
+.table{
     text-align: center;
 }
+.titulo {
+    margin-left: 100px;
+}
+
 .btn {
     margin: 10px;
 }

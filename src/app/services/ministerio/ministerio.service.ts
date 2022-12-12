@@ -9,6 +9,7 @@ import { environment as env } from 'src/environments/environment';
 export class MinisterioService {
 
   private readonly PATH: string = 'ministerios';
+  private readonly PATHID: string = 'ministerios/detalha/';
 
   constructor(
     private httpClient: HttpClient
@@ -17,4 +18,14 @@ export class MinisterioService {
     listaMinisterios(): Observable<any> {
       return this.httpClient.get(env.baseUrl + this.PATH ); 
     }
+
+    cadastraMinisterio(ministerio: any): Observable<any> {
+      return this.httpClient.post(env.baseUrl + this.PATH, ministerio);
+    }
+
+    listaMinisterioPorId(idMinisterio: any): Observable<any> {
+      
+      return this.httpClient.get(env.baseUrl + this.PATHID + idMinisterio);
+    }
+
   }

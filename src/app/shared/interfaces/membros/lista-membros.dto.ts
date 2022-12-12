@@ -1,4 +1,4 @@
-import { IListaCargo } from "../cargos/lista-cargo.dto";
+import { IListaCargoDto } from "../cargos/lista-cargos.dto";
 
 export interface IListaMembrosDto {
     idMembro: string;
@@ -7,6 +7,6 @@ export interface IListaMembrosDto {
     endereco: string;
     cpf: string;
     
-    cargo: IListaCargo;
+    cargo: IListaCargoDto;
 
 }
