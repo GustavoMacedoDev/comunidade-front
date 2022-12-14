@@ -1,0 +1,22 @@
+<h2>Lista de Cargos</h2>
+<table class="table">
+    <tr>
+        <th>Código do Cargo</th>
+        <th>Nome</th>
+        <th>Editar</th>
+        <th>Deletar</th>
+    </tr>
+    <tr *ngFor="let cargo of cargos">
+        <td>{{ cargo.idCargo }}</td>
+        <td>{{ cargo.nome }}</td>
+        <td><button class="botao" (click)="openDialogEdita(cargo.idCargo)"><i class="bi bi-pencil"></i></button></td>
+        <td><button class="botao" (click)="openDialogDeleta(cargo.idCargo, cargo.nome)"><i class="bi bi-trash"></i></button></td>
+    </tr>
+</table>
+
+<button class="btn btn-primary" (click)="openDialogCadastra()">
+    Cadastrar Novo Cargo
+</button>
+<button class="btn btn-primary" routerLink="{{ '/inicio'}}">
+    Voltar
+</button>

@@ -1,0 +1,15 @@
+<h1 mat-dialog-title>Edição de Cargo</h1>
+<form [formGroup]="form">
+  <div mat-dialog-content>
+    <p>Digite o nome do Cargo</p>
+    <mat-form-field>
+      <input matInput type="text" name="nome" id="nome" formControlName="nome">
+    </mat-form-field>
+  </div>
+  
+  <div mat-dialog-actions>
+    <button mat-button (click)="onCancel()">Cancelar</button>
+    <button mat-button (click)="editarCargo()" 
+             cdkFocusInitial>Salvar</button>
+  </div>
+</form>

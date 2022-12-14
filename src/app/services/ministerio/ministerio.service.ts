@@ -8,7 +8,7 @@ import { environment as env } from 'src/environments/environment';
 })
 export class MinisterioService {
 
-  private readonly PATH: string = 'ministerios';
+  private readonly PATH: string = 'ministerios/';
   private readonly PATHID: string = 'ministerios/detalha/';
 
   constructor(
@@ -26,6 +26,10 @@ export class MinisterioService {
     listaMinisterioPorId(idMinisterio: any): Observable<any> {
       
       return this.httpClient.get(env.baseUrl + this.PATHID + idMinisterio);
+    }
+
+    deletaMinisterio(idMinisterio: string): Observable<any>{
+      return this.httpClient.delete(env.baseUrl + this.PATH + idMinisterio);
     }
 
   }

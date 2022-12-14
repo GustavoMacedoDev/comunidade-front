@@ -1,5 +1,5 @@
 <div *ngIf="ministerio">
-    <h2>Membros do {{ ministerio.nome }}</h2>    
+    <h2>Membros do {{ ministerio.nome }} ({{ ministerio.sigla }})</h2>    
 </div>
 <div *ngIf="membros.length > 0">
     <table class="table table.stripped">
@@ -19,3 +19,8 @@
 <div *ngIf="membros.length < 1">
     <span>Nenhum membro vinculado a esse ministério</span>
 </div>
+
+<button class="btn btn-primary" routerLink="{{ '/lista-ministerio'}}">
+    Voltar
+</button>
+<app-cadastra-membro-ministerio></app-cadastra-membro-ministerio>

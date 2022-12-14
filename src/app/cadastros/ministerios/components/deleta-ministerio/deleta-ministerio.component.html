@@ -1,0 +1,13 @@
+<h2>Exclusão de Ministério</h2>
+
+<p>Tem certeza que deseja excluir o ministério?</p>
+<div *ngIf="ministerio">
+    <p>Nome: {{ ministerio.nome }}</p>
+    <p>Data de Criação: {{ ministerio.dataCriacao | date: 'dd/MM/yyyy'}}</p>
+    <p>Sigla: {{ ministerio.sigla }}</p>
+</div>
+
+
+<button class="btn btn-primary" (click)="excluiMinisterio()">Sim</button>
+<button class="btn btn-primary" (click)="cancelarExclusao()">Cancelar Exclusão</button>
+

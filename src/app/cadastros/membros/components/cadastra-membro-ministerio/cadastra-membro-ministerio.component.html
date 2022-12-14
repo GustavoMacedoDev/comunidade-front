@@ -1,37 +1,26 @@
 <h3>Vincular Membros ao Ministerio</h3>
 <form [formGroup]="form">
-  <div class="form-group campo">
+  <div class="">
     <label for="membro">Membros</label>
-    <select class="form-control" name="idMembro" id="idMembro" formControlName="idMembro">
+    <select class="form-control col-sm-3" name="idMembro" id="idMembro" formControlName="idMembro">
       <option type="number" *ngFor="let membro of membros" [value]="membro.idMembro">
           {{ membro.nome }}
       </option>
     </select>
-  </div>
-  <div class="form-group campo">
+
     <label for="dataEntrada">Data de Entrada</label>
-    <input class="form-control" type="date" name="dataEntrada" id="dataEntrada" 
+    <input class="form-control col-sm-3" type="date" name="dataEntrada" id="dataEntrada" 
     formControlName="dataEntrada">
-  </div>
-  <div class="form-group campo">
+
     <label for="perfil">Perfil</label>
-    <select class="form-control" name="idPerfil" id="idPerfil" formControlName="idPerfil">
+    <select class="form-control col-sm-3" name="idPerfil" id="idPerfil" formControlName="idPerfil">
       <option type="number" *ngFor="let perfil of perfis" [value]="perfil.idPerfil">
           {{ perfil.nome }}
       </option>
     </select>
-  </div>
-  <div class="form-group campo">
-    <label for="ministerio">Ministério</label>
-    <select class="form-control" name="idMinisterio" id="idMinisterio" formControlName="idMinisterio">
-      <option type="number" *ngFor="let ministerio of ministerios" [value]="ministerio.idMinisterio">
-          {{ ministerio.nome }}
-      </option>
-    </select>
-  </div>
-  <div class="form-group campo">
+
     <label for="responsavel">Responsável pelo Ministério</label>
-    <select class="form-control" name="responsavel" id="responsavel" formControlName="responsavel">
+    <select class="form-control col-sm-1" name="responsavel" id="responsavel" formControlName="responsavel">
       <option [value]="1">
           SIM
       </option>

@@ -1,0 +1,66 @@
+import { Component, Inject, OnInit } from '@angular/core';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
+import { MatSnackBar } from '@angular/material/snack-bar';
+import { Router } from '@angular/router';
+import { CargoService } from 'src/app/services/cargo/cargo.service';
+import { PerfilService } from 'src/app/services/perfil/perfil.service';
+
+@Component({
+  selector: 'app-edita-perfil',
+  templateUrl: './edita-perfil.component.html',
+  styleUrls: ['./edita-perfil.component.css']
+})
+export class EditaPerfilComponent implements OnInit {
+
+  form!: FormGroup;
+
+  constructor(
+    public dialogRef: MatDialogRef<EditaPerfilComponent>,
+    @Inject(MAT_DIALOG_DATA) public data: any,
+    public fb: FormBuilder,
+    public perfilService: PerfilService,
+    public router: Router,
+    public snackBar: MatSnackBar
+  ) { }
+
+  ngOnInit(): void {
+    this.geraForm();
+  }
+
+  geraForm() {
+    this.form = this.fb.group({
+      nome:['', Validators.required]
+    });
+  }
+
+  onCancel() {
+    this.dialogRef.close();
+  }
+
+  editarPerfil() {
+    if(this.form.invalid) {
+      return;
+  }
+
+  const perfil = this.form.value;
+  const idPerfil = this.data.idPerfil;
+
+  this.perfilService.alteraPerfil(idPerfil, perfil)
+    .subscribe({
+      next: res => {
+        const msg: string = res.mensagem;
+        this.snackBar.open(msg, "Sucesso", {duration: 3000});
+        window.location.reload();
+      },
+      error: (erro) => {
+        const msg: string = erro.error.mensagem;
+        this.snackBar.open(msg, "Erro", {duration: 3000});
+      }
+    });
+
+    return false;
+
+  }
+
+}

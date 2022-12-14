@@ -1,0 +1,15 @@
+<h2>Lista de Perfis</h2>
+<table class="table">
+    <tr>
+        <th>Código do Perfil</th>
+        <th>Nome</th>
+        <th>Editar</th>
+        <th>Deletar</th>
+    </tr>
+    <tr *ngFor="let perfil of perfis">
+        <td>{{ perfil.idPerfil }}</td>
+        <td>{{ perfil.nome }}</td>
+        <td><button class="botao" (click)="openDialogEdita(perfil.idPerfil)"><i class="bi bi-pencil"></i></button></td>
+        <td><button class="botao" (click)="openDialogDeleta(perfil.idPerfil, perfil.nome)"><i class="bi bi-trash"></i></button></td>
+    </tr>
+</table>

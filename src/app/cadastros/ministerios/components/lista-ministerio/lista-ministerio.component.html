@@ -10,14 +10,16 @@
         <th>Data de Criação </th>
         <th>Ver Membros </th>
         <th>Editar Ministerio </th>
+        <th>Deletar Ministerio </th>
     </tr>
     <tr *ngFor="let min of ministerios">
         <td>{{ min.idMinisterio }}</td>
         <td>{{ min.nome }}</td>
         <td>{{ min.sigla }}</td>
-        <td>{{ min.dataCriacao }}</td>
+        <td>{{ min.dataCriacao | date : 'dd/MM/yyyy'}}</td>
         <td><a [routerLink]="['/lista-membros-ministerio/' + min.idMinisterio]">VER</a></td>
         <td><a [routerLink]="['/edita-ministerio/' + min.idMinisterio]">Editar</a></td>
+        <td><a [routerLink]="['/deleta-ministerio/' + min.idMinisterio]" >Deletar</a></td>
     </tr>
 </table>
 

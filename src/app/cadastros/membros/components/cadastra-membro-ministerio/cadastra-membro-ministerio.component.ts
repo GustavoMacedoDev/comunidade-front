@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { MatSnackBar } from '@angular/material/snack-bar';
-import { Router } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { MembroMinisterioService } from 'src/app/services/membro-ministerio/membro-ministerio.service';
 import { MembroService } from 'src/app/services/membro/membro.service';
 import { MinisterioService } from 'src/app/services/ministerio/ministerio.service';
@@ -30,7 +30,8 @@ export class CadastraMembroMinisterioComponent implements OnInit {
     private membroMinisterioService: MembroMinisterioService,
     private ministerioService: MinisterioService,
     private router: Router,
-    private snackBar: MatSnackBar
+    private snackBar: MatSnackBar,
+    private route: ActivatedRoute
     ) { }
 
   ngOnInit(): void {
@@ -49,7 +50,6 @@ export class CadastraMembroMinisterioComponent implements OnInit {
         dataSaida: [''],
         responsavel: ['', Validators.required],
         idMembro: ['', Validators.required],
-        idMinisterio: ['', Validators.required],
         idPerfil: ['', Validators.required]
       });
   }
@@ -61,7 +61,7 @@ export class CadastraMembroMinisterioComponent implements OnInit {
 
     const membroMinisterio: ICadastraMembroMinisterioDto = this.form.value;
     membroMinisterio.idMembro = parseInt(membroMinisterio.idMembro);
-    membroMinisterio.idMinisterio = parseInt(membroMinisterio.idMinisterio);
+    membroMinisterio.idMinisterio = parseInt(this.route.snapshot.params['idMinisterio']);
     membroMinisterio.idPerfil = parseInt(membroMinisterio.idPerfil);
     membroMinisterio.responsavel = parseInt(membroMinisterio.responsavel);
     
@@ -69,11 +69,11 @@ export class CadastraMembroMinisterioComponent implements OnInit {
       .subscribe({
         next: res =>{
           const msg: string = "Membro vinculado com sucesso!";
-          //this.router.navigate(['/lista-membro']);
+          window.location.reload();
           this.snackBar.open(msg, "Sucesso", {duration: 3000});
         },
         error: (erro) => {
-          const msg: string = "Erro ao vincular membro!";
+          const msg: string = erro.error.mensagem;
           this.snackBar.open(msg, "Erro", {duration: 3000});
         }
       });
