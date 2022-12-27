@@ -1,1 +1,10 @@
-<p>deleta-perfil works!</p>
+<h1 mat-dialog-title>Exclusão de Perfil</h1>
+  <div mat-dialog-content>
+    <h3>Tem certeza que deseja excluir o perfil {{ data.nome }} ?</h3>
+  </div>
+  
+  <div mat-dialog-actions>
+    <button mat-button (click)="onCancel()">Cancelar</button>
+    <button mat-button (click)="deletaPerfil()" 
+             cdkFocusInitial>Sim</button>
+  </div>

@@ -38,6 +38,7 @@ export class CadastraCargoComponent implements OnInit {
 
   cadastrarCargo(){
     if(this.form.invalid) {
+      this.snackBar.open("Preencha o campo corretamente", "Erro", {duration: 3000})
       return;
     }
 

@@ -13,3 +13,10 @@
         <td><button class="botao" (click)="openDialogDeleta(perfil.idPerfil, perfil.nome)"><i class="bi bi-trash"></i></button></td>
     </tr>
 </table>
+
+<button class="btn btn-primary" (click)="openDialogCadastra()">
+    Cadastrar Novo Perfil
+</button>
+<button class="btn btn-primary" routerLink="{{ '/inicio'}}">
+    Voltar
+</button>

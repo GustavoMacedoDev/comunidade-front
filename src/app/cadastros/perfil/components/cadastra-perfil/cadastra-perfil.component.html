@@ -1,1 +1,15 @@
-<p>cadastra-perfil works!</p>
+<h1 mat-dialog-title>Cadastro de Perfil</h1>
+<form [formGroup]="form">
+  <div mat-dialog-content>
+    <p>Digite o nome do Perfil</p>
+    <mat-form-field>
+      <input matInput type="text" autocomplete="off" name="nome" id="nome" formControlName="nome">
+    </mat-form-field>
+  </div>
+  
+  <div mat-dialog-actions>
+    <button mat-button (click)="onCancel()">Cancelar</button>
+    <button mat-button (click)="cadastrarPerfil()" 
+             cdkFocusInitial>Salvar</button>
+  </div>
+</form>
