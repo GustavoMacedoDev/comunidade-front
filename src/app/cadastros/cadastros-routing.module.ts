@@ -2,6 +2,9 @@ import { NgModule } from "@angular/core";
 import { RouterModule, Routes } from "@angular/router";
 import { CadastraCargoComponent } from "./cargo/components/cadastra-cargo/cadastra-cargo.component";
 import { ListaCargoComponent } from "./cargo/components/lista-cargo/lista-cargo.component";
+import { HomeEnderecosComponent } from "./enderecos/components/home-enderecos/home-enderecos.component";
+import { ListaEnderecoComponent } from "./enderecos/components/lista-endereco/lista-endereco.component";
+import { ListaTipoComponent } from "./enderecos/components/tipo-logradouro/lista-tipo/lista-tipo.component";
 import { CadastraMembroMinisterioComponent } from "./membros/components/cadastra-membro-ministerio/cadastra-membro-ministerio.component";
 import { CadastraMembroComponent } from "./membros/components/cadastra-membro/cadastra-membro.component";
 import { DetalhaMembroComponent } from "./membros/components/detalha-membro/detalha-membro.component";
@@ -76,6 +79,18 @@ export const routes :Routes = [
   {
     path: 'deleta-perfil',
     component: DeletaPerfilComponent
+  },
+  {
+    path: 'lista-endereco',
+    component: ListaEnderecoComponent
+  },
+  {
+    path: 'home-endereco',
+    component: HomeEnderecosComponent  
+  },
+  {
+    path: 'lista-tipo',
+    component: ListaTipoComponent
   }
 ]
 

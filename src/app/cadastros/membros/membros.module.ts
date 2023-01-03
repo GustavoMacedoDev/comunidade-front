@@ -10,6 +10,7 @@ import { NgxMaskModule } from 'ngx-mask';
 import { DetalhaMembroComponent } from './components/detalha-membro/detalha-membro.component';
 import { CadastraMembroMinisterioComponent } from './components/cadastra-membro-ministerio/cadastra-membro-ministerio.component';
 import { ListaMembrosMinisteriosComponent } from './components/lista-membros-ministerios/lista-membros-ministerios.component';
+import { EnderecosModule } from '../enderecos/enderecos.module';
 
 @NgModule({
   declarations: [
@@ -26,7 +27,8 @@ import { ListaMembrosMinisteriosComponent } from './components/lista-membros-min
     FormsModule,
     ReactiveFormsModule,
     MatSnackBarModule,
-    NgxMaskModule
+    NgxMaskModule,
+    EnderecosModule
     
   ]
 })

@@ -1,2 +1,19 @@
-<h3>Detalhamento de Membro</h3>
-{{ membro | json}}
+<div *ngIf="membro">
+    <h2 class="title">Detalhamento de Membro</h2>
+    <h4> <strong>Nome:</strong> {{ membro.nome }} <strong>CPF:</strong> {{ membro.cpf | cpf}}
+    <strong>Data de Nascimento:</strong> {{ membro.dataNascimento | date : 'dd/MM/yyyy'}}
+    <strong>Endereço: </strong> {{ membro.endereco }} <strong> Cargo: </strong> {{ membro.cargo }}</h4>
+
+    <h3 class="title">Contatos do Membro</h3>
+    <table class="table">
+        <tr>
+            <th>Email</th>
+            <th>Telefone</th>
+        </tr>
+        <tr *ngFor="let contato of contatos">
+            <td>{{ contato.email }}</td>
+            <td>{{ contato.telefone | phone }}</td>
+        </tr>
+    </table>
+</div>    
+<app-lista-endereco></app-lista-endereco>

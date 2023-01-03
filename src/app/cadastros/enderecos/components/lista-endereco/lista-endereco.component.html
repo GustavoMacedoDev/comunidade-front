@@ -1,0 +1,19 @@
+<h3 class="title">Endereço do Membro</h3>
+<table class="table">
+    <tr>
+        <th>CEP</th>
+        <th>Bairro</th>
+        <th>Logradouro</th>
+        <th>Municipio</th>
+    </tr>
+    <tr *ngFor="let end of enderecos">
+        <td>{{ end.cep }}</td>
+        <td>{{ end.bairro }}</td>
+        <td>{{ end.tipoLogradouro }} {{ end.logradouro }},
+             N° {{ end.numero }}, {{ end.complemento }}
+        </td>
+        <td>
+             {{ end.municipio }}, {{ end.estado }} ({{ end.siglaEstado}})
+        </td>
+    </tr>
+</table>

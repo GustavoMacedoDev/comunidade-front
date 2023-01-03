@@ -4,8 +4,6 @@
         <th>Id Membro</th> 
         <th>Nome</th> 
         <th>CPF</th> 
-        <th>Data de Nascimento</th> 
-        <th>Endereço</th> 
         <th>Cargo</th> 
         <th>Detalha Membro</th> 
     </tr>
@@ -13,8 +11,6 @@
         <td>{{ membro.idMembro }}</td>
         <td>{{ membro.nome }}</td>
         <td>{{ membro.cpf | cpf }}</td>
-        <td>{{ membro.dataNascimento | date : 'dd/MM/yyyy '}}</td>
-        <td>{{ membro.endereco }}</td>
         <td>{{ membro.cargo.nome }}</td>
         <td><a [routerLink]="['/detalha-membro/' + membro.idMembro]"> Detalha</a></td>
     </tr>

@@ -17,6 +17,7 @@ import { MinisteriosModule } from './cadastros/ministerios/ministerios.module';
 import { CargoModule } from './cadastros/cargo/cargo.module';
 import { MatDialogModule } from '@angular/material/dialog';
 import { PerfilModule } from './cadastros/perfil/perfil.module';
+import { EnderecosModule } from './cadastros/enderecos/enderecos.module';
 
 registerLocaleData(localePtBr);
 
@@ -39,6 +40,7 @@ registerLocaleData(localePtBr);
     CargoModule,
     MatDialogModule,
     PerfilModule,
+    EnderecosModule,
     
     NgxMaskModule.forRoot(),
     AppRoutingModule

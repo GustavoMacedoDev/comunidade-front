@@ -1,18 +1,21 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { CpfPipe } from './pipes/cpf.pipe';
+import { PhonePipe } from './pipes/phone.pipe';
 
 
 
 @NgModule({
   declarations: [
-    CpfPipe
+    CpfPipe,
+    PhonePipe
   ],
   imports: [
     CommonModule
   ],
   exports: [
-    CpfPipe
+    CpfPipe,
+    PhonePipe
   ]
 })
 export class SharedModule { }
