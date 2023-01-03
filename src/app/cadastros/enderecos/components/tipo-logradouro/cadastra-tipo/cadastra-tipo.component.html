@@ -1,0 +1,15 @@
+<h1 mat-dialog-title>Cadastro de Tipo</h1>
+<form [formGroup]="form">
+  <div mat-dialog-content>
+    <p>Digite o nome do Tipo</p>
+    <mat-form-field>
+      <input matInput type="text" autocomplete="off" name="nome" id="nome" formControlName="nome">
+    </mat-form-field>
+  </div>
+  
+  <div mat-dialog-actions>
+    <button mat-button (click)="onCancel()">Cancelar</button>
+    <button mat-button (click)="cadastrarTipo()" 
+             cdkFocusInitial>Salvar</button>
+  </div>
+</form>

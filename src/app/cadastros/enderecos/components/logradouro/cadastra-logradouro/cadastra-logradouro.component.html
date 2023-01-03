@@ -1,0 +1,23 @@
+<h1 mat-dialog-title>Cadastro de Logradouro</h1>
+<form [formGroup]="form">
+    <div class="form-group campo">
+        <label for="tipo">Tipo de Logradouro</label>
+        <select class="form-control" name="idTipoLogradouro" id="idTipoLogradouro" formControlName="idTipoLogradouro">
+          <option type="number" *ngFor="let tipo of tipos" [value]="tipo.idTipoLogradouro">
+              {{ tipo.nome }}
+          </option>
+        </select>
+      </div>
+  <div mat-dialog-content>
+    <p>Digite o nome do Logradouro</p>
+    <mat-form-field  class="campo-nome">
+      <input matInput type="text" autocomplete="off" name="nome" id="nome" formControlName="nome">
+    </mat-form-field>
+  </div>
+  
+  <div mat-dialog-actions>
+    <button class="btn1" mat-button (click)="onCancel()">Cancelar</button>
+    <button class="btn2" mat-button (click)="cadastrarLogradouro()" 
+             cdkFocusInitial>Salvar</button>
+  </div>
+</form>

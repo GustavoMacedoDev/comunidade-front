@@ -1,0 +1,10 @@
+<h1 mat-dialog-title>Exclusão de Bairro</h1>
+  <div mat-dialog-content>
+    <h3>Tem certeza que deseja excluir o Bairro "{{ data.nome }}"?</h3>
+  </div>
+  
+  <div mat-dialog-actions>
+    <button mat-button (click)="onCancel()">Cancelar</button>
+    <button mat-button (click)="deletaBairro()" 
+             cdkFocusInitial>Sim</button>
+  </div>

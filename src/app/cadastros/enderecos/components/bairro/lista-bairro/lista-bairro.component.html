@@ -1,0 +1,26 @@
+<h2 class="text-center">Lista de Bairros</h2>
+<table class="table">
+    <tr>
+        <th>Id do Bairro</th>
+        <th>Nome</th>
+        <th>Editar </th>
+        <th>Excluir</th>
+    </tr>
+    <tr *ngFor="let bairro of bairros">
+        <td>{{ bairro.idBairro }}</td>
+        <td>{{ bairro.nome }}</td>
+        <td><button class="botao" (click)="openDialogEdita(bairro.idBairro)">
+            <i class="bi bi-pencil"></i></button>
+        </td>
+        <td><button class="botao" (click)="openDialogDeleta(bairro.idBairro, bairro.nome)">
+            <i class="bi bi-trash"></i></button>
+        </td>
+    </tr>
+</table>
+
+<button class="btn btn-primary" (click)="openDialogCadastra()">
+    Novo Bairro
+ </button>
+ <button class="btn btn-primary" routerLink="{{ '/home-endereco' }}">
+    Voltar
+ </button>

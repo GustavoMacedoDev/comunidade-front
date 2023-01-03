@@ -1,25 +1,25 @@
-<h2 class="text-center">Tipos de Logradouros</h2>
+<h2 class="text-center">Lista de Logradouros</h2>
 <table class="table">
     <tr>
-        <th>Id do Tipo</th>
+        <th>Id Logradouro</th>
         <th>Nome</th>
         <th>Editar</th>
         <th>Excluir</th>
     </tr>
-    <tr *ngFor="let tipo of tipos">
-        <td>{{ tipo.idTipoLogradouro }}</td>
-        <td>{{ tipo.nome }}</td>
-        <td><button class="botao" (click)="openDialogEdita(tipo.idTipoLogradouro)">
+    <tr *ngFor="let log of logradouros">
+        <td>{{ log.idLogradouro }}</td>
+        <td>{{ log.nome }}</td>
+        <td><button class="botao" (click)="openDialogEdita(log.idLogradouro)">
             <i class="bi bi-pencil"></i></button>
         </td>
-        <td><button class="botao" (click)="openDialogDeleta(tipo.idTipoLogradouro, tipo.nome)">
+        <td><button class="botao" (click)="openDialogDeleta(log.idLogradouro, log.nome)">
             <i class="bi bi-trash"></i></button>
         </td>
     </tr>
 </table>
 
 <button class="btn btn-primary" (click)="openDialogCadastra()">
-    Novo Tipo
+    Novo Logradouro
  </button>
  <button class="btn btn-primary" routerLink="{{ '/home-endereco' }}">
     Voltar

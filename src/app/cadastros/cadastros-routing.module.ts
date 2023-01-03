@@ -2,8 +2,11 @@ import { NgModule } from "@angular/core";
 import { RouterModule, Routes } from "@angular/router";
 import { CadastraCargoComponent } from "./cargo/components/cadastra-cargo/cadastra-cargo.component";
 import { ListaCargoComponent } from "./cargo/components/lista-cargo/lista-cargo.component";
+import { ListaBairroComponent } from "./enderecos/components/bairro/lista-bairro/lista-bairro.component";
 import { HomeEnderecosComponent } from "./enderecos/components/home-enderecos/home-enderecos.component";
 import { ListaEnderecoComponent } from "./enderecos/components/lista-endereco/lista-endereco.component";
+import { ListaLogradouroComponent } from "./enderecos/components/logradouro/lista-logradouro/lista-logradouro.component";
+import { CadastraTipoComponent } from "./enderecos/components/tipo-logradouro/cadastra-tipo/cadastra-tipo.component";
 import { ListaTipoComponent } from "./enderecos/components/tipo-logradouro/lista-tipo/lista-tipo.component";
 import { CadastraMembroMinisterioComponent } from "./membros/components/cadastra-membro-ministerio/cadastra-membro-ministerio.component";
 import { CadastraMembroComponent } from "./membros/components/cadastra-membro/cadastra-membro.component";
@@ -91,6 +94,18 @@ export const routes :Routes = [
   {
     path: 'lista-tipo',
     component: ListaTipoComponent
+  },
+  {
+    path: 'cadastra-tipo',
+    component: CadastraTipoComponent
+  },
+  {
+    path: 'lista-logradouro',
+    component: ListaLogradouroComponent
+  },
+  {
+    path: 'lista-bairro',
+    component: ListaBairroComponent
   }
 ]
 
